@@ -1,14 +1,335 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.DestinoFragment">
+    >
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.desafiolatam.pruebasuperheroes.viewModel.HeroesViewModel" />
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    </data>
+
+    <FrameLayout
+        android:id="@+id/back"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@drawable/fondofinal"
+        tools:context=".ui.DestinoFragment">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvNameDetail"
+                android:layout_width="365dp"
+                android:layout_height="63dp"
+                android:fontFamily="@font/bangers"
+                android:gravity="bottom|center"
+                android:shadowColor="#000000"
+                android:text="@string/nombre"
+                android:textColor="#000000"
+                android:textColorHighlight="#000000"
+                android:textColorHint="#000000"
+                android:textColorLink="#000000"
+                android:textSize="45sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.077" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#00FFFFFF"
+                app:cardCornerRadius="35dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvNameDetail"
+                app:layout_constraintVertical_bias="0.139">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="144dp"
+                    android:layout_height="154dp"
+                    android:contentDescription="@string/todo"
+                    android:foregroundTint="#F40101"
+                    app:circularflow_defaultRadius="15dp"
+                    app:circularflow_radiusInDP="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ImageContrastCheck"
+                    tools:src="@tools:sample/avatars" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="168dp"
+                android:layout_height="33dp"
+                android:background="#51000000"
+                android:fontFamily="@font/comic_neue_bold_italic"
+                android:gravity="center"
+                android:text="@string/Name"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.148"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                app:layout_constraintVertical_bias="0.043" />
+
+            <TextView
+                android:id="@+id/tvFullName"
+                android:layout_width="175dp"
+                android:layout_height="33dp"
+                android:background="#7AFFFF00"
+                android:fontFamily="@font/comic_neue_bold_italic"
+                android:gravity="center"
+                android:text="@string/desconocido"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvNombre"
+                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                app:layout_constraintVertical_bias="0.043" />
+
+            <TextView
+                android:id="@+id/tvInteligencia"
+                android:layout_width="163dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="28dp"
+                android:background="#51000000"
+                android:fontFamily="@font/comic_neue_bold_italic"
+                android:gravity="center"
+                android:shadowColor="#020202"
+                android:text="@string/intelligence"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/black"
+                android:textColorLink="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.124"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvNombre"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tvFuerza"
+                android:layout_width="164dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="32dp"
+                android:background="#51000000"
+                android:fontFamily="@font/comic_neue_bold_italic"
+                android:gravity="center"
+                android:text="@string/strenght"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.128"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvInteligencia"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tvVelocidad"
+                android:layout_width="163dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="28dp"
+                android:background="#51000000"
+                android:fontFamily="@font/comic_neue_bold_italic"
+                android:gravity="center"
+                android:text="@string/speed"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.129"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvFuerza"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tvResistencia"
+                android:layout_width="166dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="16dp"
+                android:background="#51000000"
+                android:fontFamily="@font/comic_neue_bold_italic"
+                android:gravity="center"
+                android:text="@string/durability"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.13"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvVelocidad"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tvPoder"
+                android:layout_width="166dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="28dp"
+                android:background="#51000000"
+                android:fontFamily="@font/comic_neue_bold_italic"
+                android:gravity="center"
+                android:text="@string/power"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.13"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvResistencia"
+                app:layout_constraintVertical_bias="0.006" />
+
+            <TextView
+                android:id="@+id/tvCombate"
+                android:layout_width="163dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="24dp"
+                android:background="#51000000"
+                android:fontFamily="@font/comic_neue_bold_italic"
+                android:gravity="center"
+                android:shadowColor="@color/white"
+                android:text="@string/combat"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.145"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPoder"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tvIntelligence"
+                android:layout_width="125dp"
+                android:layout_height="28dp"
+                android:background="#7AFFFF00"
+                android:fontFamily="@font/comic_neue_bold_italic"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.51"
+                app:layout_constraintStart_toEndOf="@+id/tvInteligencia"
+                app:layout_constraintTop_toBottomOf="@+id/tvFullName"
+                app:layout_constraintVertical_bias="0.09" />
+
+            <TextView
+                android:id="@+id/tvStrenght"
+                android:layout_width="124dp"
+                android:layout_height="27dp"
+                android:background="#7AFFFF00"
+                android:fontFamily="@font/comic_neue_bold_italic"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.538"
+                app:layout_constraintStart_toEndOf="@+id/tvFuerza"
+                app:layout_constraintTop_toBottomOf="@+id/tvIntelligence"
+                app:layout_constraintVertical_bias="0.12" />
+
+            <TextView
+                android:id="@+id/tvSpeed"
+                android:layout_width="124dp"
+                android:layout_height="33dp"
+                android:background="#7AFFFF00"
+                android:fontFamily="@font/comic_neue_bold_italic"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.532"
+                app:layout_constraintStart_toEndOf="@+id/tvVelocidad"
+                app:layout_constraintTop_toBottomOf="@+id/tvStrenght"
+                app:layout_constraintVertical_bias="0.144" />
+
+            <TextView
+                android:id="@+id/tvDurability"
+                android:layout_width="125dp"
+                android:layout_height="35dp"
+                android:background="#7AFFFF00"
+                android:fontFamily="@font/comic_neue_bold_italic"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.522"
+                app:layout_constraintStart_toEndOf="@+id/tvResistencia"
+                app:layout_constraintTop_toBottomOf="@+id/tvSpeed"
+                app:layout_constraintVertical_bias="0.094" />
+
+            <TextView
+                android:id="@+id/tvPower"
+                android:layout_width="122dp"
+                android:layout_height="28dp"
+                android:layout_marginEnd="36dp"
+                android:background="#7AFFFF00"
+                android:fontFamily="@font/comic_neue_bold_italic"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.89"
+                app:layout_constraintStart_toEndOf="@+id/tvPoder"
+                app:layout_constraintTop_toBottomOf="@+id/tvDurability"
+                app:layout_constraintVertical_bias="0.35" />
+
+            <TextView
+                android:id="@+id/tvComabat"
+                android:layout_width="118dp"
+                android:layout_height="28dp"
+                android:background="#7AFFFF00"
+                android:fontFamily="@font/comic_neue_bold_italic"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.553"
+                app:layout_constraintStart_toEndOf="@+id/tvCombate"
+                app:layout_constraintTop_toBottomOf="@+id/tvPower"
+                app:layout_constraintVertical_bias="0.627" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+</layout>

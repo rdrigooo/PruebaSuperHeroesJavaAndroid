@@ -12,7 +12,7 @@ import retrofit2.http.Path;
 public interface SuperheroeAPI {
 
     @GET("all.json")
-    Call<List<Superheroe>> getAll();
-    @GET("id/{sid}.json")
-    Call<SuperheroeItem> getSuperhero(@Path("sid")String id);
+    Call<List<SuperheroeItem>> getAll();
+    @GET("{id}/1.json")
+    Call<SuperheroeItem> getSuperhero(@Path("id")String id);
 }

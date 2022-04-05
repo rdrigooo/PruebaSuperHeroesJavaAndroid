@@ -2,7 +2,9 @@ package com.desafiolatam.pruebasuperheroes.modelo;
 
 import com.google.gson.annotations.SerializedName;
 
-public class SuperheroeItem{
+import java.io.Serializable;
+
+public class SuperheroeItem implements Serializable {
 
 	@SerializedName("images")
 	private Images images;
